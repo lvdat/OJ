@@ -6446,8 +6446,8 @@ msgid ""
 "See you soon! If you have problems activating your account, feel free to "
 "shoot us a message at: "
 msgstr ""
-"Nếu bạn có vấn đề với việc kích hoạt tài khoản, hãy liên hệ với chúng mình "
-"qua: "
+"Nếu bạn có vấn đề với việc kích hoạt tài khoản, hãy liên hệ với CIC "
+"qua email: datb2012191@student.ctu.edu.vn"
 
 #: templates/registration/registration_form.html:137
 #: templates/registration/registration_form.html:191
