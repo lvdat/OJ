@@ -877,8 +877,8 @@ msgid "Problem URL"
 msgstr "Link bài"
 
 #: judge/forms.py:378
-msgid "Full URL to the problem, e.g. https://oj.vnoi.info/problem/post"
-msgstr "Link tới bài tập, ví dụ: https://oj.vnoi.info/problem/post"
+msgid "Full URL to the problem, e.g. https://oj.ctuit.club/problem/post"
+msgstr "Link tới bài tập, ví dụ: https://oj.ctuit.club/problem/post"
 
 #: judge/forms.py:410 judge/views/register.py:26
 #: templates/blog/top-contrib.html:8 templates/blog/top-pp.html:8
@@ -1314,7 +1314,7 @@ msgstr "Logo"
 msgid ""
 "This image will replace the default site logo for users inside the contest."
 msgstr ""
-"Link tới logo của kỳ thi. Ví dụ: https://oj.vnoi.info/martor/logo/hoadao.png"
+"Link tới logo của kỳ thi. Ví dụ: https://oj.ctuit.club/martor/logo/hoadao.png"
 
 #: judge/models/contest.py:152
 msgid "the amount of live participants"
