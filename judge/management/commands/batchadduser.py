@@ -51,7 +51,7 @@ class Command(BaseCommand):
                 'username': username,
                 'fullname': fullname,
                 'password': password,
-                'email': email
+                'email': email,
             })
 
         fin.close()
