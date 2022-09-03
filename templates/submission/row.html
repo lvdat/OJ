@@ -3,16 +3,12 @@
     <div class="score">
         {%- if submission.is_graded -%}
             {%- if submission.status in ('IE', 'CE', 'AB') -%}
-                ---
+                <b>{{ submission.short_status }}</b>
             {%- else -%}
                 {%- if can_view_testcase_status -%}
                     {{ submission.case_points|floatformat(-3) }} / {{ submission.case_total|floatformat(0) }}
                 {%- else -%}
-                    {%- if submission.case_points|floatformat(-3) == submission.case_total|floatformat(0) -%}
-                        {{ submission.short_status }}
-                    {%- else -%}
-                        ---
-                    {%- endif -%}
+                    <b>{{ submission.short_status }}</b>
                 {%- endif -%}
             {%- endif -%}
         {%- else -%}
