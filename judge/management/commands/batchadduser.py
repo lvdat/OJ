@@ -15,10 +15,11 @@ def generate_password():
     return ''.join(secrets.choice(ALPHABET) for _ in range(8))
 
 
-def add_user(username, fullname, password, email):
-    usr = User(username=username, first_name=fullname, is_active=True, email=email)
+def add_user(username, fullname, password):
+    usr = User(username=username, first_name=fullname, is_active=True)
     usr.set_password(password)
     usr.save()
+
     profile = Profile(user=usr)
     profile.language = Language.objects.get(key=settings.DEFAULT_USER_LANGUAGE)
     profile.save()
@@ -28,7 +29,7 @@ class Command(BaseCommand):
     help = 'batch create users'
 
     def add_arguments(self, parser):
-        parser.add_argument('input', help='csv file containing username, fullname and email')
+        parser.add_argument('input', help='csv file containing username and fullname')
         parser.add_argument('output', help='where to store output csv file')
 
     def handle(self, *args, **options):
@@ -36,22 +37,20 @@ class Command(BaseCommand):
         fout = open(options['output'], 'w', newline='')
 
         reader = csv.DictReader(fin)
-        writer = csv.DictWriter(fout, fieldnames=['username', 'fullname', 'password', 'email'])
+        writer = csv.DictWriter(fout, fieldnames=['username', 'fullname', 'password'])
         writer.writeheader()
 
         for row in reader:
             username = row['username']
             fullname = row['fullname']
-            email = row['email']
             password = generate_password()
 
-            add_user(username, fullname, password, email)
+            add_user(username, fullname, password)
 
             writer.writerow({
                 'username': username,
                 'fullname': fullname,
                 'password': password,
-                'email': email,
             })
 
         fin.close()
