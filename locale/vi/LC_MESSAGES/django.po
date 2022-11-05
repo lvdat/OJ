@@ -4460,7 +4460,7 @@ msgstr "Đăng xuất"
 #: templates/base.html:299
 #: templates/registration/password_reset_complete.html:4
 msgid "Log in"
-msgstr "Đăng nhập"
+msgstr "Đăng nhập tài khoản kỳ thi"
 
 #: templates/base.html:300 templates/registration/registration_form.html:182
 msgid "or"
