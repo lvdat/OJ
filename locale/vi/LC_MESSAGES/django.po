@@ -7443,6 +7443,10 @@ msgstr "Số bài"
 msgid "Check all"
 msgstr "Chọn tất cả"
 
+#: templates/registration/login.html:7
+msgid "Please login with the provided account"
+msgstr "Vui lòng đăng nhập với tài khoản đã được cấp"
+
 #~ msgid "There is **%(count)s** problem in this contest."
 #~ msgid_plural "There are **%(count)s** problems in this contest."
 #~ msgstr[0] "Có **%(count)s** bài tập trong kỳ thi này."

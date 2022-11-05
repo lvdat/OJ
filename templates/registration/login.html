@@ -28,6 +28,7 @@
 
 {% block body %}
     <div class="auth-flow-form">
+        <p style="text-align: center">{{ _('Please login with the provided account') }}</p>
         <form action="" method="post" class="form-area">
             {% csrf_token %}
             {% if form.errors %}
@@ -59,27 +60,5 @@
             <button style="float:right;" type="submit">{{ _('Login!') }}</button>
             <input type="hidden" name="next" value="{{ next }}">
         </form>
-        <a href="{{ url('password_reset') }}">{{ _('Forgot your password?') }}</a>
-
-        {% if form.has_google_auth or form.has_facebook_auth or form.has_github_auth %}
-            <h4>{{ _('Or log in with...') }}</h4>
-            <div>
-                {% if form.has_google_auth %}
-                    <a href="{{ url('social:begin', "google-oauth2") }}?next={{ next }}" class="social google-icon">
-                        <i class="fa fa-google-plus-square"></i>
-                    </a>
-                {% endif %}
-                {% if form.has_facebook_auth %}
-                    <a href="{{ url('social:begin', "facebook") }}?next={{ next }}" class="social facebook-icon">
-                        <i class="fa fa-facebook-square"></i>
-                    </a>
-                {% endif %}
-                {% if form.has_github_auth %}
-                    <a href="{{ url('social:begin', "github-secure") }}?next={{ next }}" class="social github-icon">
-                        <i class="fa fa-github-square"></i>
-                    </a>
-                {% endif %}
-            </div>
-        {% endif %}
     </div>
 {% endblock %}

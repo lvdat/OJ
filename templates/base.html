@@ -242,17 +242,6 @@
         </ul>
 
         <span id="user-links">
-            <a href=
-                {% if request.resolver_match.view_name == "problem_detail" and problem %}
-                    "{{ url('new_problem_ticket', problem.code) }}"
-                {% else %}
-                    "/tickets/new?issue_url={{ request.build_absolute_uri()|urlencode }}"
-                {% endif %}
-            style="margin-right: 5px;">
-                <span title="{{ _('Report issue') }}">
-                    <i class="fa fa-exclamation-triangle" style="color: yellow;"></i>
-                </span>
-            </a>
             <a id="flag_vi" href="#" onclick="submmit_language('vi')" style="margin-right: 5px; margin-top: 4px;">
                 <img src="{{ static('icons/vi_flag.svg') }}" alt="VI" height="24">
             </a>
@@ -289,8 +278,6 @@
             {% else %}
                 <span class="anon">
                     <a href="{{ url('auth_login') }}?next={{ LOGIN_RETURN_PATH|urlencode }}"><b>{{ _('Log in') }}</b></a>
-                    &nbsp;{{ _('or') }}&nbsp;
-                    <a href="{{ url('registration_register') }}"><b>{{ _('Sign up') }}</b></a>
                 </span>
             {% endif %}
         </span>
